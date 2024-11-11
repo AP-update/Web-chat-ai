@@ -1,0 +1,172 @@
+/* Reset style untuk membuat layout lebih bersih */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e5ddd5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column; /* Menjaga semua elemen berada di kolom */
+}
+
+/* Chat Container */
+.chat-container {
+    width: 100%;
+    max-width: 400px; /* Maksimal lebar container */
+    height: 630px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px; /* Memberikan jarak antara chatbox dan footer */
+}
+
+/* Header */
+.header {
+    background-color: #075e54;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Chat Box */
+.chat-box {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Pesan */
+.message {
+    max-width: 75%;
+    padding: 8px 12px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+/* Pesan dari user */
+.message.user {
+    background-color: #dcf8c6;
+    align-self: flex-end;
+}
+
+/* Pesan dari bot */
+.message.bot {
+    background-color: #d3d3d3; /* Warna abu-abu */
+    align-self: flex-start;
+}
+
+/* Menambahkan jarak antara judul dan isi pesan */
+.title {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Input dan tombol */
+.input-container {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    background-color: #f5f5f5;
+    justify-content: space-between; /* Rapatkan input dan tombol */
+}
+
+/* Textarea input */
+textarea {
+    width: 80%;
+    height: 40px;
+    padding: 8px;
+    border-radius: 20px;
+    border: none;
+    resize: none;
+}
+
+/* Tombol kirim */
+button {
+    width: 15%;
+    background-color: #075e54;
+    border: none;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 10px;
+}
+
+/* Ikon pada tombol kirim */
+button svg {
+    fill: white;
+    width: 20px;
+    height: 20px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    color: #777;
+    font-size: 14px;
+}
+
+/* Menambahkan titik animasi menggunakan pseudo-element */
+.bubble.typing::after{
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 5px;
+    border-radius: 50%;
+    background-color: #075e54;
+    animation: typing 1.5s steps(3, end) infinite; /* Menambahkan efek typing dengan 3 langkah */
+}
+
+/* Animasi ketik titik-titik */
+@keyframes typing {
+    0% {
+        content: "";
+    }
+    33% {
+        content: ".";
+    }
+    66% {
+        content: "..";
+    }
+    100% {
+        content: "...";
+    }
+}
+
+/* Responsif untuk perangkat dengan layar kecil */
+@media (max-width: 600px) {
+    .chat-container {
+        width: 95%; /* Lebar container di perangkat kecil */
+    }
+
+    textarea {
+        width: 70%; /* Lebar textarea lebih kecil */
+    }
+
+    button {
+        width: 20%; /* Lebar tombol kirim lebih kecil */
+    }
+
+    .header h1 {
+        font-size: 18px; /* Mengurangi ukuran teks di header */
+    }
+
+    footer {
+        font-size: 12px; /* Mengurangi ukuran teks footer */
+    }
+}
