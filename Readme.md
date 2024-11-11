@@ -1,7 +1,9 @@
 
 ☘️ Terimakasih kepada                                
 Allah Swt
-Kedua Orangtua Saya                     
+
+Kedua Orangtua Saya   
+
 Pengguna Yang Selalu Support
 
 📝 Credit : Lenwy
